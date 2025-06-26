@@ -5,7 +5,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import requests
-from streamlit_folium import st_folium
+from streamlit_folium import st_folium  
 import folium
 from datetime import datetime
 
@@ -35,6 +35,7 @@ def clean_pm25(val):
     except:
         return None
 
+print("DEBUG - CSV Columns:", df.columns.tolist())
 df["pm25"] = df["pm25"].apply(clean_pm25)
 
 
